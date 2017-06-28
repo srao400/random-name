@@ -1,0 +1,21 @@
+<%- include('./header') %>
+<body>
+<h1> Random Name Picker</h1>
+<% if (index.names) { %>
+        <% var arr = index.names.split(","); %>
+         <% var rand = arr[Math.floor(Math.random() * arr.length)]; %>
+        <h2> The random name is <%= rand %> </h2>
+        <% } %>
+
+<form method="POST" action="/index">
+  <div>
+    <label for="names">Names:</label>
+    <textarea id="names" name="names" rows="8" cols="80"> <%= index.names %> </textarea>
+  </div>
+
+  <div>
+    <input type="submit" name="" value="Submit">
+  </div>
+</form>
+
+<%- include('./footer') %>
